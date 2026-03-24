@@ -8,6 +8,17 @@
 
 //gcc hello.c -o hello
 
+void
+read_from_pipe (int file)
+{
+  FILE *stream;
+  int c;
+  stream = fdopen (file, "r");
+  while ((c = fgetc (stream)) != EOF)
+    putchar (c);
+  fclose (stream);
+}
+
 int main(void){
 
 	pid_t pid;
