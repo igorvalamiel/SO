@@ -45,10 +45,9 @@ int main(void){
 		/* This is the parent process.
 			Close other end first. */
 		fd = open(filename, O_WRONLY | O_CREAT | O_TRUNC, 0644);
+		close (mypipe[0]);
 		dup2(mypipe[1], STDOUT_FILENO);
 		execlp("/bin/ping","ping","localhost","-c","10",NULL);
-		close (mypipe[0]);
-		write_to_pipe (mypipe[1]);
 		return EXIT_SUCCESS;
 		}
 }
