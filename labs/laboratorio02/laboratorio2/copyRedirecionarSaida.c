@@ -1,6 +1,10 @@
 #include <unistd.h>
 #include <fcntl.h>
 #include <sys/wait.h>
+#include <sys/types.h>
+#include <unistd.h>
+#include <stdio.h>
+#include <stdlib.h>
 
 //gcc hello.c -o hello
 
@@ -18,7 +22,7 @@ int main(void){
 
 
 	/* Create the child process. */
-	pid_t pid = fork();
+	pid = fork();
 	int fd;
 	char *filename = "saida.out";
 
