@@ -2,7 +2,6 @@
 #include <fcntl.h>
 #include <sys/wait.h>
 
-
 int main(void){
 	pid_t child_pid = fork();
 	int fd;
